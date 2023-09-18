@@ -1,10 +1,14 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Roboto, Poppins } from 'next/font/google'
+import "./globals.css"
+import React from "react"
+import type { Metadata } from "next"
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+
+config.autoAddCss = false
 
 export const metadata: Metadata = {
-  title: 'Wheater APP',
-  description: 'This is wheater app for checking wheater in your city',
+  title: "Weather APP",
+  description: "This is wheater app for checking weather in your city",
 }
 
 export default function RootLayout({
