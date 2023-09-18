@@ -17,7 +17,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className="flex h-screen w-screen items-center justify-center"
+    >
       <body>{children}</body>
     </html>
   )
