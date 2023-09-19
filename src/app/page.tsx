@@ -9,10 +9,16 @@ export default function Home() {
   return (
     <Search.Root>
       <Search.Bar />
-      {currentLocation.length > 0 && (
+      {currentLocation?.name?.length > 0 && (
         <>
-          <Search.Status temperature={0} description="404" />
-          <Search.Details humidity={0} windSpeed={0} />
+          <Search.Status
+            temperature={currentLocation.main.temp}
+            description={currentLocation.weather[0].main}
+          />
+          <Search.Details
+            humidity={currentLocation.main.humidity}
+            windSpeed={currentLocation.wind.speed}
+          />
         </>
       )}
     </Search.Root>

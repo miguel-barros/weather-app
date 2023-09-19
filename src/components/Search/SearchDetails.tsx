@@ -3,7 +3,7 @@ import Icon from "../Icon/Icon"
 
 interface SearchDetailsProps {
   humidity: number
-  windSpeed: number
+  windSpeed: string | number
 }
 
 export function SearchDetails({ humidity, windSpeed }: SearchDetailsProps) {
@@ -19,7 +19,7 @@ export function SearchDetails({ humidity, windSpeed }: SearchDetailsProps) {
       <span className="flex items-end gap-3">
         <Icon icon="faWind" size="2xl" />
         <span>
-          <p className="text-xl">{windSpeed}Km/h</p>
+          <p className="text-xl">{parseInt(windSpeed as string)}Km/h</p>
           <p className="text-sm">Wind Speed</p>
         </span>
       </span>

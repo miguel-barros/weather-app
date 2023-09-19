@@ -3,9 +3,9 @@ import Image from "next/image"
 import React from "react"
 
 interface SearchStatusProps {
-  temperature: number
+  temperature: string | number
   type?: "C" | "F"
-  description: "clear" | "cloud" | "mist" | "rain" | "snow" | "404"
+  description: string
 }
 
 export function SearchStatus({
@@ -21,21 +21,17 @@ export function SearchStatus({
         width={180}
         height={180}
       />
-      {description === "404" ? (
-        <p className="mt-5 text-center text-2xl font-bold">Location invalid</p>
-      ) : (
-        <div className="mt-5 flex flex-col gap-3">
-          <p className="flex items-start text-6xl font-bold">
-            {temperature}
-            <span>
-              <span className="absolute flex text-start text-sm">
-                º <span className="self-end text-xl">{type}</span>
-              </span>
+      <div className="mt-5 flex flex-col gap-3">
+        <p className="flex items-start text-6xl font-bold">
+          {parseInt(temperature as string)}
+          <span>
+            <span className="absolute flex text-start text-sm">
+              º <span className="self-end text-xl">{type}</span>
             </span>
-          </p>
-          <p className="text-md text-center">{description}</p>
-        </div>
-      )}
+          </span>
+        </p>
+        <p className="text-md text-center">{description}</p>
+      </div>
     </div>
   )
 }
