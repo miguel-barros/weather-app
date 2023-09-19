@@ -6,7 +6,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core"
 interface IconProps {
   icon: keyof typeof Icons
   color?: string
-  size?: "xs" | "sm" | "lg" | "xl"
+  size?: "xs" | "sm" | "lg" | "xl" | "2xl"
   className?: string
 }
 
