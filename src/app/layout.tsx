@@ -3,7 +3,6 @@ import React from "react"
 import type { Metadata } from "next"
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
-import { LocationProvider } from "@/contexts/locationContext"
 
 config.autoAddCss = false
 
@@ -22,9 +21,7 @@ export default function RootLayout({
       lang="en"
       className="flex h-screen w-screen items-center justify-center"
     >
-      <LocationProvider>
-        <body>{children}</body>
-      </LocationProvider>
+      <body>{children}</body>
     </html>
   )
 }

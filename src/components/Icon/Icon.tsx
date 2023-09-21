@@ -1,7 +1,7 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import * as Icons from "@fortawesome/free-solid-svg-icons"
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
+import { type IconProp } from "@fortawesome/fontawesome-svg-core"
 
 interface IconProps {
   icon: keyof typeof Icons

@@ -1,7 +1,7 @@
 export interface Weather {
   name: string
   main: {
-    temp: number
+    temp: string
     humidity: number
   }
   weather: {
@@ -9,7 +9,7 @@ export interface Weather {
     description: string
   }[]
   wind: {
-    speed: number
+    speed: string
     deg: number
   }
 }
