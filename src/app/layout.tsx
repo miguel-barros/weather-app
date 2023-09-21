@@ -1,8 +1,10 @@
 import "./globals.css"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import "react-toastify/dist/ReactToastify.css"
 import React from "react"
 import type { Metadata } from "next"
 import { config } from "@fortawesome/fontawesome-svg-core"
-import "@fortawesome/fontawesome-svg-core/styles.css"
+import { ToastContainer } from "react-toastify"
 
 config.autoAddCss = false
 
@@ -21,7 +23,10 @@ export default function RootLayout({
       lang="en"
       className="flex h-screen w-screen items-center justify-center"
     >
-      <body>{children}</body>
+      <body>
+        <ToastContainer />
+        {children}
+      </body>
     </html>
   )
 }

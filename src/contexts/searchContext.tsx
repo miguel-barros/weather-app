@@ -3,6 +3,7 @@ import React, { useContext, createContext, useState } from "react"
 import { getWeather } from "@/requests/weather"
 import { type SearchContextProps } from "@/types/search"
 import { type Weather } from "@/types/weather"
+import { toast } from "react-toastify"
 
 export const SearchContext = createContext({} as SearchContextProps)
 
@@ -13,7 +14,16 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
   const [location, setLocation] = useState<Weather>({} as Weather)
 
   const handleSearch = async () =>
-    getWeather(search).then((res) => setLocation(res))
+    getWeather(search)
+      .then((res) => {
+        setLocation(res)
+        toast.success(`${res.name} weather has been updated`)
+      })
+      .catch(() =>
+        toast.error(
+          "It appears there was a problem searching for the city mentioned. Try again",
+        ),
+      )
 
   return (
     <SearchContext.Provider
